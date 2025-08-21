@@ -26,12 +26,12 @@ interface ChatSession {
 }
 
 const aiModels = [
-  { id: 'gpt-4', name: 'ChatGPT-4', color: 'stones-power', openRouterModel: 'openai/gpt-4' },
-  { id: 'gpt-3.5-turbo', name: 'ChatGPT-3.5', color: 'stones-space', openRouterModel: 'openai/gpt-3.5-turbo' },
-  { id: 'claude-3-sonnet', name: 'Claude 3 Sonnet', color: 'stones-reality', openRouterModel: 'anthropic/claude-3-sonnet' },
-  { id: 'claude-3-haiku', name: 'Claude 3 Haiku', color: 'stones-soul', openRouterModel: 'anthropic/claude-3-haiku' },
-  { id: 'gemini-pro', name: 'Gemini Pro', color: 'stones-time', openRouterModel: 'google/gemini-pro' },
-  { id: 'mistral-large', name: 'Mistral Large', color: 'stones-mind', openRouterModel: 'mistralai/mistral-large' }
+  { id: 'gpt-3.5-turbo', name: 'ChatGPT-3.5', color: 'stones-power', openRouterModel: 'openai/gpt-3.5-turbo' },
+  { id: 'gpt-4o-mini', name: 'GPT-4o Mini', color: 'stones-space', openRouterModel: 'openai/gpt-4o-mini' },
+  { id: 'claude-3-haiku', name: 'Claude 3 Haiku', color: 'stones-reality', openRouterModel: 'anthropic/claude-3-haiku' },
+  { id: 'claude-3.5-sonnet', name: 'Claude 3.5 Sonnet', color: 'stones-soul', openRouterModel: 'anthropic/claude-3.5-sonnet' },
+  { id: 'gemini-1.5-pro', name: 'Gemini 1.5 Pro', color: 'stones-time', openRouterModel: 'google/gemini-1.5-pro' },
+  { id: 'deepseek-r1', name: 'DeepSeek R1', color: 'stones-mind', openRouterModel: 'deepseek/deepseek-r1' }
 ];
 
 const MultiChatInterface = () => {
@@ -42,13 +42,13 @@ const MultiChatInterface = () => {
   const [showApiKeyInput, setShowApiKeyInput] = useState(false);
   const [activeSessions, setActiveSessions] = useState<ChatSession[]>([
     { 
-      modelId: 'gpt-4', 
-      modelName: 'ChatGPT-4', 
+      modelId: 'gpt-3.5-turbo', 
+      modelName: 'ChatGPT-3.5', 
       messages: [], 
       color: 'stones-power' 
     }
   ]);
-  const [activeTab, setActiveTab] = useState('gpt-4');
+  const [activeTab, setActiveTab] = useState('gpt-3.5-turbo');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -118,7 +118,7 @@ const MultiChatInterface = () => {
             content: msg.content
           })),
           temperature: 0.7,
-          max_tokens: 2000
+          max_tokens: 500
         })
       });
 
@@ -153,7 +153,6 @@ const MultiChatInterface = () => {
       timestamp: new Date()
     };
 
-    // Add user message to all active sessions
     setActiveSessions(prev => 
       prev.map(session => ({
         ...session,
@@ -206,11 +205,17 @@ const MultiChatInterface = () => {
       } catch (error) {
         const errorMessage: Message = {
           id: `error-${session.modelId}-${Date.now()}`,
-          content: `Error: ${error instanceof Error ? error.message : 'Unknown error occurred'}`,
+          content: `Error: ${error instanceof Error ? error.message : 'Unknown error occurred'}. This model might need more credits or have limited availability.`,
           role: 'assistant',
           model: session.modelName,
           timestamp: new Date()
         };
+        
+        toast({
+          title: `${session.modelName} Error`,
+          description: error instanceof Error ? error.message : 'Unknown error occurred',
+          variant: "destructive"
+        });
         
         return { sessionId: session.modelId, message: errorMessage };
       }
