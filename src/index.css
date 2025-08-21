@@ -26,23 +26,23 @@
     --popover: 240 10% 8%;
     --popover-foreground: 0 0% 98%;
 
-    /* Primary - Purple (Power Stone) */
+    /* Primary - Purple */
     --primary: 270 91% 65%;
     --primary-glow: 270 100% 75%;
     --primary-foreground: 0 0% 98%;
 
-    /* Secondary - Cyan (Space Stone) */
-    --secondary: 195 100% 60%;
-    --secondary-glow: 195 100% 70%;
-    --secondary-foreground: 240 10% 4%;
+    /* Secondary - Blue */
+    --secondary: 220 91% 65%;
+    --secondary-glow: 220 100% 75%;
+    --secondary-foreground: 0 0% 98%;
 
-    /* Accent Colors - Infinity Stones */
+    /* Accent Colors - Purple, Blue, Red Theme */
     --power-stone: 270 91% 65%;
-    --space-stone: 195 100% 60%;
+    --space-stone: 220 91% 65%;
     --reality-stone: 0 84% 60%;
-    --soul-stone: 30 100% 60%;
-    --time-stone: 120 84% 60%;
-    --mind-stone: 60 100% 60%;
+    --soul-stone: 280 100% 70%;
+    --time-stone: 200 100% 65%;
+    --mind-stone: 10 100% 65%;
 
     /* UI States */
     --muted: 240 10% 12%;
@@ -59,11 +59,11 @@
     --input: 240 10% 12%;
     --ring: 270 91% 65%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(270 30% 8%) 50%, hsl(240 10% 3.9%) 100%);
+    /* Gradients - Purple, Blue, Red Theme */
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(270 30% 8%) 50%, hsl(220 30% 8%) 80%, hsl(240 10% 3.9%) 100%);
     --gradient-glass: linear-gradient(135deg, hsla(240, 10%, 8%, 0.4) 0%, hsla(240, 10%, 15%, 0.2) 100%);
-    --gradient-primary: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(195 100% 60%) 100%);
-    --gradient-infinity: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(195 100% 60%) 16.66%, hsl(0 84% 60%) 33.33%, hsl(30 100% 60%) 50%, hsl(120 84% 60%) 66.66%, hsl(60 100% 60%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(220 91% 65%) 50%, hsl(0 84% 60%) 100%);
+    --gradient-infinity: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(220 91% 65%) 33.33%, hsl(0 84% 60%) 66.66%, hsl(280 100% 70%) 100%);
 
     /* Shadows & Effects */
     --shadow-glow: 0 0 40px hsla(270, 91%, 65%, 0.3);

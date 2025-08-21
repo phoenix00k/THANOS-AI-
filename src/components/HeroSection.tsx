@@ -39,7 +39,7 @@ const HeroSection = () => {
         <div className="text-2xl md:text-4xl font-semibold mb-4 text-foreground">
           <span className="text-stones-power">6 Minds.</span>{" "}
           <span className="text-stones-space">1 Question.</span>{" "}
-          <span className="text-stones-mind">Infinite Power.</span>
+          <span className="text-stones-reality">Infinite Power.</span>
         </div>
         
         {/* Description */}
@@ -51,11 +51,11 @@ const HeroSection = () => {
         <div className="flex justify-center items-center gap-4 mb-12">
           {[
             { color: "stones-power", glow: "shadow-[0_0_30px_#8B5CF6]" },
-            { color: "stones-space", glow: "shadow-[0_0_30px_#06B6D4]" },
+            { color: "stones-space", glow: "shadow-[0_0_30px_#3B82F6]" },
             { color: "stones-reality", glow: "shadow-[0_0_30px_#EF4444]" },
-            { color: "stones-soul", glow: "shadow-[0_0_30px_#F59E0B]" },
-            { color: "stones-time", glow: "shadow-[0_0_30px_#10B981]" },
-            { color: "stones-mind", glow: "shadow-[0_0_30px_#EAB308]" }
+            { color: "stones-soul", glow: "shadow-[0_0_30px_#C084FC]" },
+            { color: "stones-time", glow: "shadow-[0_0_30px_#06B6D4]" },
+            { color: "stones-mind", glow: "shadow-[0_0_30px_#F97316]" }
           ].map((stone, index) => (
             <div
               key={index}

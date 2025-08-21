@@ -18,9 +18,9 @@ const aiModels = [
     description: "Advanced reasoning model with deep analytical capabilities",
     color: "stones-space",
     icon: Brain,
-    bgGradient: "from-cyan-600/20 to-cyan-900/20",
-    borderColor: "border-cyan-500/30",
-    hoverShadow: "hover:shadow-[0_0_40px_rgba(6,182,212,0.4)]"
+    bgGradient: "from-blue-600/20 to-blue-900/20",
+    borderColor: "border-blue-500/30",
+    hoverShadow: "hover:shadow-[0_0_40px_rgba(59,130,246,0.4)]"
   },
   {
     name: "Gemini",
@@ -36,27 +36,27 @@ const aiModels = [
     description: "Anthropic's helpful and harmless AI with strong ethical reasoning",
     color: "stones-soul",
     icon: Bot,
-    bgGradient: "from-orange-600/20 to-orange-900/20",
-    borderColor: "border-orange-500/30",
-    hoverShadow: "hover:shadow-[0_0_40px_rgba(245,158,11,0.4)]"
+    bgGradient: "from-purple-400/20 to-purple-700/20",
+    borderColor: "border-purple-400/30",
+    hoverShadow: "hover:shadow-[0_0_40px_rgba(192,132,252,0.4)]"
   },
   {
     name: "Mistral",
     description: "Efficient European AI model with multilingual capabilities",
     color: "stones-time",
     icon: Cpu,
-    bgGradient: "from-green-600/20 to-green-900/20",
-    borderColor: "border-green-500/30",
-    hoverShadow: "hover:shadow-[0_0_40px_rgba(16,185,129,0.4)]"
+    bgGradient: "from-cyan-600/20 to-cyan-900/20",
+    borderColor: "border-cyan-500/30",
+    hoverShadow: "hover:shadow-[0_0_40px_rgba(6,182,212,0.4)]"
   },
   {
     name: "NVIDIA AI",
     description: "Cutting-edge AI models optimized for performance and accuracy",
     color: "stones-mind",
     icon: Microchip,
-    bgGradient: "from-yellow-600/20 to-yellow-900/20",
-    borderColor: "border-yellow-500/30",
-    hoverShadow: "hover:shadow-[0_0_40px_rgba(234,179,8,0.4)]"
+    bgGradient: "from-orange-600/20 to-red-700/20",
+    borderColor: "border-orange-500/30",
+    hoverShadow: "hover:shadow-[0_0_40px_rgba(249,115,22,0.4)]"
   }
 ];
 
@@ -129,10 +129,10 @@ const AIModelsSection = () => {
             <Button 
               variant="hero" 
               size="lg"
-              onClick={() => navigate("/chat?mode=advanced")}
+              onClick={() => navigate("/chat")}
               className="text-lg px-8"
             >
-              Try Advanced Mode
+              Try Multi-AI Chat
             </Button>
           </div>
         </div>
