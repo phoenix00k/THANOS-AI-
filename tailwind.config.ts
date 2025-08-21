@@ -23,15 +23,37 @@ export default {
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
+				'background-secondary': 'hsl(var(--background-secondary))',
 				foreground: 'hsl(var(--foreground))',
+				
+				// Glass Elements
+				glass: {
+					DEFAULT: 'hsl(var(--glass))',
+					border: 'hsl(var(--glass-border))',
+					foreground: 'hsl(var(--glass-foreground))'
+				},
+				
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
+					glow: 'hsl(var(--primary-glow))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
+					glow: 'hsl(var(--secondary-glow))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
+				
+				// Infinity Stones Colors
+				stones: {
+					power: 'hsl(var(--power-stone))',
+					space: 'hsl(var(--space-stone))',
+					reality: 'hsl(var(--reality-stone))',
+					soul: 'hsl(var(--soul-stone))',
+					time: 'hsl(var(--time-stone))',
+					mind: 'hsl(var(--mind-stone))'
+				},
+				
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
@@ -51,22 +73,25 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-glass': 'var(--gradient-glass)',
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-infinity': 'var(--gradient-infinity)'
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backdropBlur: {
+				'glass': '16px',
+				'card': '20px'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +109,30 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+					'50%': { transform: 'translateY(-10px) rotate(2deg)' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { boxShadow: '0 0 20px hsla(270, 91%, 65%, 0.4)' },
+					'50%': { boxShadow: '0 0 40px hsla(270, 91%, 65%, 0.8)' }
+				},
+				'infinity-glow': {
+					'0%': { boxShadow: '0 0 20px hsla(270, 91%, 65%, 0.4)' },
+					'16.66%': { boxShadow: '0 0 20px hsla(195, 100%, 60%, 0.4)' },
+					'33.33%': { boxShadow: '0 0 20px hsla(0, 84%, 60%, 0.4)' },
+					'50%': { boxShadow: '0 0 20px hsla(30, 100%, 60%, 0.4)' },
+					'66.66%': { boxShadow: '0 0 20px hsla(120, 84%, 60%, 0.4)' },
+					'100%': { boxShadow: '0 0 20px hsla(60, 100%, 60%, 0.4)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'infinity-glow': 'infinity-glow 3s ease-in-out infinite alternate'
 			}
 		}
 	},
